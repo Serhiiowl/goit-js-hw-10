@@ -28,16 +28,20 @@
     font-size: 0.75em;
 }
 
-/* Стилі для кнопки "Start" */
+
 button[data-start] {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 1em;
     cursor: pointer;
     border-radius: 8px;
+    background-color: #4e75ff;
+    color: #ffffff;
+    border: none;
+
 }
 
-/* Стилі для інпута datetime-picker */
+
 #datetime-picker {
     margin-top: 20px;
     padding: 10px;
@@ -46,6 +50,7 @@ button[data-start] {
     max-width: 300px;
     margin-bottom: 20px;
     color: #808080;
+    border-color: #808080;
     border-radius: 4px;
 
 }
@@ -53,21 +58,16 @@ button[data-start] {
 
 #datetime-picker:hover {
     color: #000000;
-    /* Колір тексту при hover */
+    border-color: #000000;
+
 }
 
 #datetime-picker:active {
     color: #4e75ff;
-    /* Колір тексту при активному стані */
+
 }
 
-/* Стилі для кнопки */
-button[data-start] {
-    background-color: #4e75ff;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-}
+
 
 button[data-start]:hover {
     background-color: #6C8CFF;
@@ -77,15 +77,4 @@ button[data-start]:disabled {
     background-color: #cfcfcf;
     color: #989898;
     cursor: default;
-}
-
-/* Стилі для iziToast */
-.iziToast {
-    border-radius: 4px !important;
-    /* Встановлюємо радіус границі */
-}
-
-.iziToast-error {
-    background-color: #B51B1B !important;
-    /* Колір фону для повідомлень про помилку */
 }

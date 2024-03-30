@@ -3,6 +3,7 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 // Підключення бібліотеки iziToast
 import iziToast from 'izitoast';
+import "izitoast/dist/css/iziToast.min.css";
 
 // Оголошення змінної для зберігання обраної дати
 let userSelectedDate;
@@ -84,3 +85,4 @@ document.querySelector('[data-start]').addEventListener('click', function() {
     timerInterval = setInterval(updateTimer, 1000);
   }
 });
+

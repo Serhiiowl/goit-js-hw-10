@@ -8,8 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', event => {
     event.preventDefault();
 
-    const delay = Number(form.delay.value);
+    const input = form.delay; // Отримуємо доступ до інпута
+    const delay = Number(input.value);
     const state = form.state.value;
+
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
         if (state === 'fulfilled') {
@@ -28,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
           message: `Fulfilled promise in ${delay}ms`,
           position: 'topRight'
         });
+        input.value = '';
       })
       .catch(delay => {
         console.log(`❌ Rejected promise in ${delay}ms`);
@@ -36,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
           message: `Rejected promise in ${delay}ms`,
           position: 'topRight'
         });
+        input.value = ''; 
       });
   });
 });

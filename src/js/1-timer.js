@@ -7,6 +7,10 @@ import "izitoast/dist/css/iziToast.min.css";
 
 
 let userSelectedDate;
+const startButton = document.querySelector('[data-start]');
+const datePickerInput = document.querySelector('#datetime-picker');
+
+startButton.disabled = true;
 
 
 function addLeadingZero(value) {
@@ -34,17 +38,17 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-  onClose(selectedDates) {
+   onClose(selectedDates) {
     const selectedDate = selectedDates[0];
     if (selectedDate <= new Date()) {
       iziToast.error({
         title: 'Error',
         message: 'Please choose a date in the future',
       });
-      document.querySelector('[data-start]').disabled = true;
+      startButton.disabled = true;
     } else {
       userSelectedDate = selectedDate;
-      document.querySelector('[data-start]').disabled = false;
+      startButton.disabled = false;
     }
   },
 };
@@ -74,15 +78,10 @@ function updateTimer() {
 
 // Запуск таймера
 let timerInterval;
-document.querySelector('[data-start]').addEventListener('click', () => {
+startButton.addEventListener('click', () => {
   if (userSelectedDate > new Date()) {
+    datePickerInput.disabled = true; // Деактивація інпута
+    startButton.disabled = true; // Деактивація кнопки "Start"
     timerInterval = setInterval(updateTimer, 1000);
   }
 });
-document.querySelector('[data-start]').addEventListener('click', function() {
-  if (userSelectedDate > new Date()) {
-    this.disabled = true; 
-    timerInterval = setInterval(updateTimer, 1000);
-  }
-});
-

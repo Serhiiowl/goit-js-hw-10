@@ -5,10 +5,10 @@ import "flatpickr/dist/flatpickr.min.css";
 import iziToast from 'izitoast';
 import "izitoast/dist/css/iziToast.min.css";
 
-// Оголошення змінної для зберігання обраної дати
+
 let userSelectedDate;
 
-// Функція для додавання ведучого нуля
+
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
@@ -81,7 +81,7 @@ document.querySelector('[data-start]').addEventListener('click', () => {
 });
 document.querySelector('[data-start]').addEventListener('click', function() {
   if (userSelectedDate > new Date()) {
-    this.disabled = true; // Додаємо цей рядок, щоб кнопка стала неактивною
+    this.disabled = true; 
     timerInterval = setInterval(updateTimer, 1000);
   }
 });
